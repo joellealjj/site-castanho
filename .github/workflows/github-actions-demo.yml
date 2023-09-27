@@ -1,7 +1,21 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: GitHub Actions Deploy
+run-name: ${{ github.actor }} is FTP deployment with GitHub Actions 🚀
+on: push
 jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+  
+      - name: FTP Deploy Locaweb
+        uses: locaweb/ftp-deploy@1.0.0
+        with:
+          host: ${{ secrets.HOST }} 
+          user: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          remoteDir: "public_html/newsite"
+          
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
@@ -15,4 +29,4 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 This job's status is ${{ job.status }}. 🚀🚀🚀"
