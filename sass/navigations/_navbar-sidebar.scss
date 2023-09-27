@@ -1,0 +1,103 @@
+.navbar-sidebar {
+    $itemMargin: 8px;
+    position: fixed;
+    z-index: 10;
+    display: none;
+    top: 50%;
+    padding: 0;
+    &.sidebar-top{
+        align-items: flex-start;
+        padding-top: 8px;
+    }
+    .navbar-group {
+        // transition: 0.6s;
+        // transition-delay: 0.6s;
+    }
+
+    @media screen and (min-width:$xlarge-up) {
+        display: flex;
+        position: fixed;
+        top: 50%;
+        left: $marginX;
+        transform: translateY(-50%);
+        border-left: 1px solid rgba(white, 0.1);
+    }
+
+    .nav-menu {
+        a {
+            color: currentColor;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 16px;
+            position: relative;
+            &:before{
+                position: absolute;
+                content: "";
+                top: 0;
+                bottom: 0;
+                left: 0;
+                // transition: 0.3s;
+            }
+            &:hover{
+                text-decoration: none;
+            }
+
+            .icon {
+                font-size: 24px;
+                padding-right: 16px;
+                opacity: 0.25;
+                transition: 0.3s opacity;
+            }
+
+        }
+
+        li,
+        .nav-item {
+            $iconSize: 40px;
+            display: inline-flex;
+            align-items: center;
+            height: $iconSize;
+            min-width: $iconSize;
+            .text {
+                position: absolute;
+                left: 100%;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.3s opacity;
+                display: none;
+                @media screen and (min-width:$xlarge-up){
+                    display: block;
+                }
+            }
+            &:hover,
+            &.active {
+                a {
+                    &::before{
+                        border-left: 1px solid currentColor;
+                    }
+                }
+                .icon{
+                    opacity: 1;
+                }
+                .text{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+
+}
+
+.loading-anim {
+    .navbar-sidebar {
+        .navbar-group {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,184 @@
+/*------------------------------------------------------------------
+[Legal Notice]
+
+Copyright (c) cutekit.net
+Website Template by cutekit.net / mivfx
+Author : Miradontsoa
+http://cutekit.net
+http://highhay.com
+--------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+/** CSS Reference
+	0 Base Style
+		0.1 Tag and Class Initializer
+		0.2 Typography Initializer
+	1 Components 
+		1.1 buttons / .btn, .btn-line-a
+		1.2 Form input / .form-input
+		1.3 Icons / .icon-menu
+		1.4 Items
+			1.4.1 Services / .item-service-a , .item-service-b
+			1.4.2 Products / .item-product-a
+			1.4.3 Features / .item-feature-a
+			1.4.5 Item of a grid list / .item-grid-a
+			1.4.6 Item of a grid list / .item-grid-b
+			1.4.6 Item of a grid list / .item-grid-c
+			1.4.7 Item of a grid list / .item-grid-d
+			1.4.8 Item of a pricing list / .item-pricing-a
+		1.5 Sliders
+			1.5.1 Slider a / .slider-a , .slide-a
+			1.5.2 Slider b / .slider-b , .slide-b
+	2 Navigation
+		2.1 Navbar Top / .navbar-top
+		2.2 Sidebar navigation / .navbar-sidebar
+		2.3 Fullscreen navigation menu / .navfull-menu 
+	3 Page / .page-main , .body-page
+		3.1 Initializationn
+		3.2 Page header / .page-header
+		3.3 Page footer / page-footer
+		3.4 Page cover / page-cover
+	4 Sections / .section
+		4.1 Initialization
+		4.2 Type of Section / .section-page, .section-article 
+		4.2 Home section layout / section-home
+		4.3 Section header and cover / Section header and cover / .section-header, .section-cover, .section-title 
+		4.4 Section content / .section-content
+		4.5 Section footer
+	5 Header
+		5.1 Home page header / .header-home
+	6 Helper classes
+		6.1 Helper classes
+		6.2 Color utilities classes
+		6.3 Size classes
+		6.4 Typography classes
+	7 Animations
+	
+	Sample code altering this css file can be found in "style-XXX.css" file 
+
+**/
+/*------------------------------------------------------------------
+[Colors]
+    text color : #FFFFFF, #FFF
+	black : #1d1d1d
+	white : #ffffff
+[Typography]
+	font-family :
+	-  Title : "Jost*" , "Montserrat", "Open Sans" ,sans-serif
+	-  Body : "Proxima Nova", "Noto Sans", "Segoe UI", "Opensans", "Roboto", "Helvetica", -apple-system, system-ui, BlinkMacSystemFont, sans-serif
+*/
+
+// variables and mixins
+@import "variables";
+@import "functions";
+@import "mixins";
+
+/* 0. Base style */
+/* 0.1 Tag and Class Initializer */
+@import "init/print";
+@import "init/init";
+
+/* 0.2 Typography Initializer */
+@import "init/typography";
+
+/* 1 Components */
+/* 1.1 buttons / .btn, .btn-line-a */
+@import "components/buttons/btn";
+/* 1.2 Form input / .form-input */
+@import "components/form-input/form-input";
+/* 1.3 Icons / .icon-menu */
+@import "components/icons/icon";
+
+/* 1.4 Items / .item */
+@import "items/item";
+/* 1.4.1 Services / .item-service-a , .item-service-b */
+@import "items/item-service";
+/* 1.4.2 Products / .item-product-a */
+@import "items/item-product";
+/* 1.4.3 Features / .item-feature-a */
+@import "items/item-feature";
+/* 1.4.5 Item of a grid list / .item-grid-a */
+@import "items/item-grid-a";
+/* 1.4.6 Item of a grid list / .item-grid-b */
+@import "items/item-grid-b";
+/* 1.4.6 Item of a grid list / .item-grid-c */
+@import "items/item-grid-c";
+/* 1.4.7 Item of a grid list / .item-grid-d */
+@import "items/item-grid-d";
+/* 1.4.8 Item of a pricing list / .item-pricing-a */
+@import "items/item-pricing-a";
+
+
+/* 1.5 Sliders */
+/* 1.5.1 Slider a / .slider-a , .slide-a */
+@import "sliders/slider-a";
+/* 1.5.2 Slider b / .slider-b , .slide-b */
+@import "sliders/slider-b";
+/* 1.5.3 Fullpage slider / #fp-nav , .fp-... */
+@import "sliders/slider-fullpage";
+
+/* 2 Navigation */
+/* 2.1 Navbar Top / .navbar-top */
+@import "navigations/navbar-top";
+/* 2.2 Sidebar navigation / .navbar-sidebar */
+@import "navigations/navbar-sidebar";
+/* 2.3 Fullscreen navigation menu / .navfull-menu */
+@import "navigations/navfull-menu";
+
+// /* 2.4 Fullpage Navigation dot / #fp-nav */
+// @import "component/nav-right-dot";
+
+/* 3 Page / .page-main , .body-page */
+/* 3.1 Initialization */
+@import "page/page-init";
+/* 3.2 Page header / .page-header */
+@import "page/page-header";
+/* 3.3 Page footer / page-footer */
+@import "page/page-footer";
+/* 3.4 Page cover / page-cover */
+@import "page/page-cover";
+
+
+/* 4 Sections / .section */
+/* 4.1 Initialization */
+@import "sections/section-init";
+
+/* 4.2 Type of Section / .section-page, .section-article */
+@import "sections/section-page";
+@import "sections/section-article";
+
+/* 4.3 Section header and cover / .section-header, .section-cover, .section-title */
+@import "sections/section-cover";
+@import "sections/section-header";
+@import "sections/section-title";
+
+/* 4.4 Section content / .section-content */
+@import "sections/section-content";
+@import "sections/section-contact";
+@import "contents/article-a";
+
+/* 4.5 Section footer */
+@import "sections/section-footer";
+
+/* 5 Header */
+/* 5.1 Home page header / .header-home */
+@import "headers/header-home";
+// /* 5.2 Item page header / .header-item */
+// @import "headers/header-item";
+// /* 5.3 Article page header / header-article */
+
+
+/* 6. Helper classes */
+/* 6.1 Helper classes */
+@import "utilities/helper";
+/* 6.2 Color utilities classes */
+@import "utilities/colors";
+/* 6.3 Size utilities classes */
+@import "utilities/size";
+/* 6.4 Typography classes */
+@import "utilities/typography";
+
+/* 7 Animations */
+@import "animations/anim";
+

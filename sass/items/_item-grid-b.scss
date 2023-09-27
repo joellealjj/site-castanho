@@ -1,0 +1,44 @@
+.item-grid-b {
+    .item-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        // font-weight: bold;
+        // font-family: $geo;
+        // font-family: $serif;
+    }
+    .item-img{
+        margin-top: 2rem;
+    }
+
+    .img-clip-left {
+        @media screen and (min-width:$large-up) {
+            $margin: 5rem;
+            margin-top: -$margin;
+            $clipSizeX: 50%;
+            $clipSizeY: $margin + 5rem;
+            padding-left: $margin;
+            // padding-right: $margin;
+            clip-path: polygon(0% $clipSizeY, $clipSizeX $clipSizeY, $clipSizeX 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+    }
+
+    .img-clip-right {
+        @media screen and (min-width:$large-up) {
+            $margin: 5rem;
+            margin-top: -$margin;
+            $clipSizeX: 50%;
+            $clipSizeY: $margin + 5rem;
+            // padding-left: $margin;
+            padding-right: $margin;
+            clip-path: polygon(0% 0%, 50% 0%, 50% $clipSizeY, 100% $clipSizeY, 100% 100%, 0% 100%);
+        }
+    }
+}
+
+.grid-list-b {
+    margin-bottom: -5rem;
+
+    .item-grid-b {
+        margin-bottom: 5rem;
+    }
+}

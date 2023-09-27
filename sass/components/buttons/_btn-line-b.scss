@@ -1,0 +1,67 @@
+// menu icon button
+
+.btn-line-b {
+
+  --iconWidth: 2rem;
+  color: currentColor;
+  border: none;
+  background: none;
+  padding: 0.75em 0;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.3s;
+
+  .icon {
+    display: inline-flex;
+  }
+
+  .icon~.text {
+    margin-left: 1em;
+  }
+
+  .text~.icon {
+    margin-left: 1em;
+  }
+
+  &:active,
+  &:hover {
+    color: currentColor;
+    background: none;
+    box-shadow: none;
+    opacity: 0.7;
+
+    &::before {
+      transform: rotate(-45deg);
+      transform-origin: 100%;
+      width: calc(var(--iconWidth) / 2);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+      transform-origin: 100%;
+      width: calc(var(--iconWidth) / 2);
+    }
+  }
+}
+
+// mixin
+// transparent button with icon
+@mixin button-line-a($color) {
+  color: $color; // border: 1px solid $color;
+}
+
+// alternative layout
+@each $color,
+$value in $theme-colors {
+  @if $value ==$white {
+    .btn-line-b.btn-white {
+      @include button-line-a($white);
+    }
+  }
+
+  @else {
+    .btn-line-b.btn-#{""+$color} {
+      @include button-line-a($value);
+    }
+  }
+}

@@ -1,0 +1,181 @@
+.slider-a {
+    position: relative;
+    $navMargin: 3rem;
+
+    @media screen and (min-width:$large-up) {
+        // padding: $sectionMarginLg 0;
+    }
+
+    // $navMargin: ($sectionMarginLg/2)-0.75;
+    .slider-arrow {
+        // background: #f4f;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        @media screen and (min-width:$large-up) {
+            // background: none;
+            position: relative;
+            padding: 0;
+        }
+
+        .btns {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .btn-arrows{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            margin: 0 1rem;
+        }
+
+        .slider-prev,
+        .slider-next {
+            position: relative;
+            z-index: 1;
+            transition: 0.3s;
+            @media screen and (min-width:$large-up) {
+
+                position: absolute;
+                bottom: 32px;
+            }
+        }
+
+        .slider-prev {
+            left: 0rem;
+            right: auto;
+            @media screen and (min-width:$large-up) {
+                left: 1.5rem;
+            }
+        }
+
+        .slider-next {
+            right: 0rem;
+            left: auto;
+            @media screen and (min-width:$large-up) {
+                right: 1.5rem;
+            }
+        }
+
+        .swiper-button-disabled {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+    .slider-pagination {
+        position: absolute;
+        top: 1.25rem;
+        bottom: auto;
+        z-index: 1;
+
+        @media screen and (min-width:$large-up) {
+            top: $navMargin;
+        }
+
+        .swiper-pagination-bullet {
+            background: currentColor;
+            transition: 0.3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: currentColor;
+            transform: scale(1.5);
+        }
+    }
+
+    .slider-controls {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        left: auto;
+        @media screen and (min-width:$medium-up){
+            position: relative;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        @media screen and (min-width:$large-up){
+            position: absolute;
+            padding: 0;
+        }
+
+        .controls-wrapper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.slider-thumbs-a {
+    z-index: 10;
+    padding: 16px;
+    @media screen and (min-width:$large-up) {
+        padding: 0;
+    }
+
+    .swiper-slide {
+        transition: 0.3s;
+    }
+
+    .swiper-slide-thumb-active {
+        opacity: 0.2;
+    }
+
+    .img {
+        border-radius: 8px;
+    }
+
+    .thumbs-pagination {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        z-index: 5;
+        width: auto;
+        margin-bottom: 1rem;
+        transform: translateX(-50%);
+        height: 2px;
+        display: flex;
+        @media screen and (min-width:$large-up) {
+            float: right;
+            position: relative;
+            top: 0;
+            left: auto;
+            transform: none;
+            height: auto;
+            display: block;
+        }
+    
+
+        .swiper-pagination-bullet {
+            background: currentColor;
+            transition: 0.3s;
+            width: 32px;
+            height: 1px;
+            border-radius: 0;
+            margin: 0;
+            position: relative;
+
+            &::before {
+                @media screen and (min-width:$large-up) {
+                    position: absolute;
+                    content: "";
+                    height: 16px;
+                    width: 100%;
+                    bottom: -8px;
+                }
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: currentColor;
+        }
+    }
+}
+
+@import "slide-a";

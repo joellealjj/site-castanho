@@ -1,0 +1,75 @@
+.icon-menu-a {
+    --iconWidth: 32px;
+    --barWidth: 1px;
+    --barWidthThick: 4px;
+    --barSpace: 8px;
+    // background: #f4f;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .bars {
+        width: var(--iconWidth);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transform: translateY(calc(-1 * var(--barWidth) / 2));
+
+        &.align-right {
+            align-items: flex-end;
+        }
+    }
+
+
+    .bar1,
+    .bar2 {
+        display: flex;
+        height: var(--barWidth);
+        background: currentColor;
+        transition: 0.3s width, 0.3s transform;
+        position: absolute;
+        top: 50%;
+    }
+
+    .bar1 {
+        width: 65%;
+        transform: translateY(calc((-1 * var(--barSpace) - var(--barWidth)) / 2));
+    }
+
+    .bar2 {
+        width: 65%;
+        right: 0;
+        transform: translateY(calc((var(--barSpace) + var(--barWidth)) / 2));
+    }
+
+    // &.menu-visible,
+    // &.menu-close {
+
+    //     .bar1 {
+    //         width: 100%;
+    //         transform: rotate(45deg) scaleX(0.8);
+    //         transform-origin: center;
+    //     }
+
+    //     .bar2 {
+    //         width: 100%;
+    //         transform: rotate(-45deg) scaleX(0.8);
+    //         transform-origin: center;
+    //     }
+    // }
+}
+
+.menu-visible .icon-menu-a,
+.icon-menu-a.menu-close {
+    .bar1 {
+        width: 100%;
+        transform: rotate(45deg) scaleX(0.8);
+        transform-origin: center;
+    }
+
+    .bar2 {
+        width: 100%;
+        transform: rotate(-45deg) scaleX(0.8);
+        transform-origin: center;
+    }
+}

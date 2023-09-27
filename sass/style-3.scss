@@ -1,0 +1,242 @@
+/*-------------------
+Sample CSS overwriting main.css rules
+
+[Table of contents]
+    0 Set default color 
+    1 Typography
+    2 Fullscreen menu
+    3 Content layout
+    4 Page cover scroll animation
+[Colors]
+    Black : #1d1d1d;
+    White : #FFFFFF;
+*/
+@import "variables";
+$color1 : #db1626;
+$black : #4d4d4d;
+$black2 : #5d5d5d;
+
+/* 0 Set default color */
+body {
+    color: $black;
+    background: $white;
+}
+
+/* 1 Typography */
+/* 1 Typography */
+// typography
+.font-title {
+    font-family: $geo;
+}
+
+.h-title,
+.i-title,
+.s-title,
+.item-title {
+    // font-weight: bold;
+}
+
+.section-page .section-header p,
+.section-page .section-content p {
+    font-family: $sans;
+    max-width: 40rem;
+}
+
+.slide-a .s-header .title {
+    font-family: $geo;
+    // font-weight: bold;
+}
+
+.item-service-a .item-header .icon,
+.item-service-a .item-header .title,
+.item-grid-a .item-header .title {
+    font-family: $geo;
+    // font-weight: bold;
+}
+
+.text-stroke {
+    -webkit-text-stroke: 2px $black;
+    color: transparent;
+}
+.text-white{
+    .text-stroke {
+        -webkit-text-stroke: 2px $white;
+        color: transparent;
+    }
+}
+
+.text-stroke-white {
+    -webkit-text-stroke: 2px $white;
+    color: transparent;
+}
+
+// text content
+.section-page .section-header p,
+.section-page .section-content p {
+    font-family: $sans;
+    max-width: 40rem;
+}
+
+.bg-level-1 {
+    // background: #f9f9f7;
+    background: #f1f2f3;
+    // color: $black2;
+    // .text-stroke {
+    //     -webkit-text-stroke: 2px $black2;
+    //     color: transparent;
+    // }
+}
+
+.bg-level-2 {
+    background: #eaeaea;
+}
+
+/* 2 Menu */
+/* Fullscreen */
+.navfull-menu {
+    background: $white;
+    color: $black;
+    z-index: 20;
+    @media screen and (min-width: $large-up){
+        top: 64px;
+    }
+    .nav-menu a {
+        color: $black;
+        &::before{
+            
+            border-color: rgba($black,0.0);
+        }
+        &::after{
+            background: rgba($black,0.1);
+        }
+
+        &:hover {
+            &::before{
+                border-color: rgba($black, 0.1);
+            }
+            color: $black;
+        }
+    }
+}
+.navbar-sidebar{
+    color: #999999;
+}
+
+/* 3 Content layout */
+/* Title style */
+@media screen and (min-width: $large-up) {
+    .section-header .h-content {
+        padding-left: 0rem;
+
+        &:before {
+            display: none;
+        }
+
+        h2 {
+            font-size: 5rem;
+        }
+    }
+}
+
+/* Item list */
+.item-feature-a .item-title, .item-feature-a h3{
+    font-family: $geo;
+    font-weight: 500;
+}
+.item-feature-a.item-bg{
+    background: #f4f5f6;
+}
+.item-feature-b .item-title, .item-feature-b h3{
+    font-family: $geo;
+    font-weight: 500;
+}
+
+
+/* footer */
+.section-footer-b .f-text{
+    color: rgba($black, 0.5);
+    a{
+        color: $black;
+    }
+}
+.section-footer-b .footer-separator{
+    border-color: rgba($black, 0.1);
+}
+/* content size */
+.width-medium {
+    max-width: 55rem;
+    width: 100%;
+}
+
+
+@media screen and (min-width: $large-up) {
+    .section-header .mt-btn {
+        margin-top: 1rem;
+    }
+}
+
+/* borders */
+.navbar-top .bd-left,
+.navbar-top .bd-right,
+.navbar-top.bd-bottom,
+.navbar-sidebar {
+    border-color: rgba($black, 0.1);
+}
+
+.content-white {
+    .navbar-top .bd-left,
+    .navbar-top .bd-right,
+    .navbar-top.bd-bottom,
+    .navbar-sidebar {
+        border-color: rgba($white, 0.1);
+    }
+}
+
+.slide-a .s-header {
+    border-color: rgba($black, 0.1);
+}
+
+.btn-line-a {
+    border-color: rgba($black, 0.1);
+}
+
+.item-grid-a .item-header,
+.item-pricing-a .item-header,
+.item-service-a .item-header {
+    border-color: rgba($black, 0.1);
+}
+
+.form-control-outline,
+input[type=text],
+input[type=password],
+input[type=email] {
+    border-color: rgba($black, 0.2);
+    background: rgba($black, 0.05);
+
+}
+
+.slider-a .slider-arrow .btn {
+    color: $white;
+    border-color: rgba($white, 0.1);
+}
+
+/* section home */
+.header-home .home-square .h-wrapper {
+    background-image: url("../img/bg-default-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    &.h-border {}
+
+}
+
+/* pricing */
+.item-pricing-a.featured::before {
+    background: rgba(white, 1);
+}
+
+/* 5. page cover */
+.page-cover {
+    background: #f4f5f6;
+}
