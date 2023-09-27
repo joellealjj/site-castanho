@@ -1,0 +1,44 @@
+.section-title{
+    position: absolute;
+    top: 120px;
+    left: auto;
+    right: 16px;
+    z-index: 1;
+    opacity: 0.1;
+    @media screen and (min-width: $medium-up){
+        top: 64px + 51px + 32px;
+        right: 32px;
+    }
+    @media screen and (min-width: $large-up){
+        top: 50vh;
+        transform: translateY(-50%);
+        right: $marginX*2;
+        opacity: 0.16;
+    }
+    &.title-right{
+
+    }
+    .title{
+        font-size: 3rem;
+        visibility: hidden;
+        @media screen and (min-width: $medium-up){
+            visibility: visible;
+            font-size: 5rem;
+        }
+        @media screen and (min-width: $large-up){
+            visibility: visible;
+            font-size: 6rem;
+        }
+        @media screen and (min-width: $xlarge-up){
+            visibility: visible;
+            font-size: 8rem;
+        }
+    }
+}
+.normal-scroll{
+    .section-title{
+        @media screen and (min-width: $medium-up){
+            top: 50%;
+        }
+    }
+}

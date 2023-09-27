@@ -1,0 +1,9 @@
+.contact-email{
+    font-size: 2rem;
+    color: currentColor;
+    transition: 0.3s;
+    &:hover{
+        opacity: 0.5;
+        color: currentColor;
+    }
+}

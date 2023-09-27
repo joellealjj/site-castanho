@@ -1,0 +1,27 @@
+.page-header{
+    position: relative;
+    z-index: 10;
+    .navbar-sidebar{
+        transition: 0.6s;
+    }
+    &.content-white{
+        color: $white;
+        .navbar-top .navbar-social .icons a,
+        .navbar-top .nav-item a, .navbar-top .nav-menu li a,
+        .navbar-sidebar .nav-menu a{
+            color: $white;
+            transition: 0.3s;
+            transition-delay: 0s;
+        }
+    }
+    &.scrolled{
+        .navbar-sidebar{
+            @media screen and (min-width:$medium-up) and (max-width:$xlarge-up){
+                    opacity: 0;
+                    visibility: hidden;
+                    // transform: translateX(-2rem);
+                    transform: translateY(-100%) rotate(-90deg) translateY(100%) translateX(-50%);
+            }
+        }
+    }
+}

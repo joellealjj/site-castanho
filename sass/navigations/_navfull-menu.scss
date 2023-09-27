@@ -1,0 +1,88 @@
+.navfull-menu{
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $black;
+    color: $white;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: 0.3s;
+    &.menu-visible{
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+    }
+    .navbar-group{
+        max-width: 360px;
+        width: 100%;
+    }
+    .nav-menu{
+        // font-weight: bold;
+        // font-family: $geo;
+        // font-family: $serif;
+        font-size: 3rem;
+        @media screen and (min-width:$large-up){
+            font-size: 3.5rem;
+            line-height: 1.4;
+        }
+        text-align: center;
+        a{
+            color: currentColor;
+            // -webkit-text-stroke: 1px $white;
+            // color: transparent;
+            transition: 0.3s;
+            line-height: 1;
+            display: block;
+            text-align: center;
+            padding: 1rem 2rem;
+            position: relative;
+            box-sizing: border-box;
+            &::before{
+                content: "";
+                position: absolute;
+                left: auto;
+                right: 0;
+                top: 0;
+                width: 00%;
+                bottom: 0;
+                border: 1px solid rgba($white, 0.0);
+                transition: 0.3s;
+                transition-delay: 0.3s;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 00%;
+                bottom: 0;
+                background: rgba($white,0.1);
+                transition: 0.3s;
+            }
+            &:hover{
+                opacity: 0.5;
+                text-decoration: none;
+                color: $white;
+                &::before{
+                    border-color: rgba($white, 0.2);
+                    width: 100%;
+                    transition-delay: 0s;
+                }
+                &::after{
+                    width: 100%;
+                    transition-delay: 0.3s;
+                }
+            }
+        }
+    }
+}

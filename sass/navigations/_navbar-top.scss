@@ -1,0 +1,254 @@
+.navbar-top {
+    $borderColor: rgba($white, 0.1);
+    $itemMargin: 32px;
+    position: absolute;
+    padding: 8px 16px;
+    width: 100%;
+    z-index: 100;
+    @media screen and (min-width:$medium-up) {
+        padding-left: 32px;
+    }
+    @media screen and (min-width:$large-up) {
+        position: relative;
+    }
+    @media screen and (min-width:$large-up) {
+        padding: 8px 32px;
+        z-index: 10;
+    }
+    &.bd-bottom {
+        border-bottom: 1px solid $borderColor;
+    }
+
+    @media screen and (min-width:$large-up) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $toolbarHeight;
+        padding: 0;
+    }
+
+    .bd-left {
+        @media screen and (min-width:$large-up) {
+            border-left: 1px solid $borderColor;
+        }
+    }
+
+    .bd-right {
+        @media screen and (min-width:$large-up) {
+            border-right: 1px solid $borderColor;
+        }
+    }
+
+    .navbar-group {
+        @media screen and (min-width:$large-up) {
+            display: flex;
+            height: 100%;
+        }
+    }
+
+    
+
+    .navbar-nav {
+        display: flex;
+        height: 100%;
+        // flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        @media screen and (min-width:$medium-up) {
+            padding-left: 16px;
+        }
+        @media screen and (min-width:$large-up) {
+            padding-left: 0;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    .navbar-collapse {
+        display: flex;
+        position: absolute;
+        top: 80px;
+        border-bottom: 1px solid $borderColor;
+        width: 100%;
+        left: 0;
+        overflow-x: auto;
+        @media screen and (min-width:$large-up) {
+            top: 0;
+            position: relative;
+            width: auto;
+            border-bottom: none;
+            overflow: initial;
+        }
+        .navbar-nav{
+            .nav-item{
+                padding: 16px;
+                @media screen and (min-width:$large-up) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .nav-item,
+    .nav-menu li {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        a {
+            color: currentColor;
+            // padding: 0 $itemMargin;
+            line-height: 1;
+            position: relative;
+            transition: 0.3s opacity;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            
+            @media screen and (min-width:$large-up) {
+                position: relative;
+                padding: 0 $itemMargin;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                border-bottom: 2px solid currentColor;
+                transition: 0.3s;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .nav-item.active a,
+    .nav-menu li.active a,
+    .nav-item a:hover,
+    .nav-menu li a:hover{
+        opacity: 0.5;
+        text-decoration: none;
+
+        &::before {
+            width: 100%;
+        }
+    }
+    .navbar-toggler{
+        display: flex;
+        padding: 0;
+        position: fixed;
+        right: 16px;
+        top: 0;
+        height: 80px;
+        z-index: 10;
+        @media screen and (min-width:$large-up) {
+            position: relative;
+            height: 100%;
+            right: 0;
+        }
+    }
+    .menu-toggler {
+        $menuPadding: 8px;
+        padding: 8px 0;
+        .icon-menu{
+            
+        }
+        .text{
+            display: flex;
+            height: 100%;
+            min-width: $toolbarHeight;
+            align-items: center;
+            justify-content: center;
+            padding: 0 $menuPadding;
+            &.multiline{
+                flex-direction: column;
+                .line{  
+                    display: block;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+    .navbar-social{
+        position: fixed;
+        right: 0;
+        top: auto;
+        left: auto;
+        bottom: 4px;
+        visibility: hidden;
+        opacity: 0;
+        // transition: 0.3s;
+        // margin-right: 16px;
+        @media screen and (min-width:$large-up) {
+            position: relative;
+            visibility: visible;
+            opacity: 1;
+            bottom: 0;
+        }
+        ul, li{
+            list-style: none;
+        }
+        .icons{
+            display: flex;
+            font-size: 2rem;
+            height: 100%;
+            align-items: center;
+            margin-right: 8px;
+            @media screen and (min-width:$large-up) {
+                margin-right: 1rem;
+            }
+            a{
+                color: currentColor;
+                padding: 0 8px;
+                transition: 0.3s opacity;
+                @media screen and (min-width:$large-up) {
+                    padding: 0 16px;
+                }
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    &.menu-visible{
+        .navbar-social{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.navbar-brand.logo-brand {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    height: $toolbarHeight;
+    margin: 0;
+    @media screen and (min-width:$large-up) {
+        padding: 8px $marginX;
+    }
+    img {
+        height: 40px;
+
+        @media screen and (min-width:$large-up) {
+            height: 40px;
+        }
+    }
+
+    .logo {
+        margin-right: 16px;
+    }
+
+    .text {
+        font-size: 1rem;
+
+        @media screen and (min-width:$large-up) {
+            font-size: 1.25rem;
+        }
+
+        .line {
+            display: block;
+            line-height: 1;
+        }
+
+    }
+}

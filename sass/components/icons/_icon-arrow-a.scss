@@ -1,0 +1,178 @@
+// arrow icon of button
+
+.icon-arrow-a {
+
+    --arrowWidth: 1.25em;
+    --arrowBorder: 1.5px;
+    --arrowHeight: 1em;
+    --arrowHeadSize: 0.5em;
+
+    .arrow-left,
+    .arrow-right,
+    .arrow-up,
+    .arrow-down {
+        position: relative;
+        height: var(--arrowHeight);
+        width: var(--arrowWidth);
+        display: inline-block;
+        border-radius: 0;
+        box-sizing: border-box;
+        transition: 0.3s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 0;
+            width: var(--arrowWidth);
+            transition: 0.3s;
+            border: var(--arrowBorder) solid currentColor;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: var(--arrowHeadSize);
+            width: var(--arrowHeadSize);
+            transition: 0.3s;
+            border: var(--arrowBorder) solid currentColor;
+
+            transform: rotate(45deg);
+        }
+    }
+
+    .arrow-left {
+        &:before {
+            left: 0%;
+            top: 0.5em;
+            border-top: none;
+            border-right: none;
+        }
+
+        &:after {
+            left: 5%;
+            top: calc(var(--arrowHeadSize) * 0.65);
+            border-top: none;
+            border-right: none;
+        }
+    }
+
+    .arrow-right {
+        &:before {
+            right: 0%;
+            left: auto;
+            // top: 50%;
+            top: 0.5em;
+            // transform: translateY(-50%);
+            border-top: none;
+            border-left: none;
+        }
+
+        &:after {
+            right: 5%;
+            left: auto;
+            // top: 50%;
+            top: calc(var(--arrowHeadSize) * 0.6);
+            // transform: translateY(-50%);
+            border-bottom: none;
+            border-left: none;
+        }
+    }
+
+    .arrow-up {
+
+        &:before {
+            width: 0;
+            height: var(--arrowWidth);
+            right: auto;
+            left: calc(var(--arrowHeadSize) * 0.45);
+            top: 0em;
+            // transform:  translateY(-50%);
+            border-bottom: none;
+            border-right: none;
+        }
+
+        &:after {
+            right: auto;
+            left: 0;
+            top: 0;
+            border-bottom: none;
+            border-right: none;
+        }
+    }
+
+    .arrow-down {
+        width: calc(var(--arrowWidth) / 2);
+        margin-top: -4px;
+
+        &:before {
+            width: 0;
+            height: var(--arrowWidth);
+            left: auto;
+            right: calc(var(--arrowHeadSize) * 0.4);
+            top: 0em;
+            // transform:  translateY(-50%);
+            border-top: none;
+            border-left: none;
+        }
+
+        &:after {
+            right: 0;
+            left: auto;
+            // top: 50%;
+            top: calc(var(--arrowWidth) - var(--arrowHeadSize));
+            // transform: translateY(-50%);
+            border-left: none;
+            border-top: none;
+        }
+    }
+}
+
+.btn:hover {
+    .icon-arrow-a.icon-anim {
+        .arrow-left {
+
+            &:before {
+                height: var(--arrowHeadSize);
+                width: var(--arrowHeadSize);
+                left: 50%;
+                top: calc(var(--arrowHeadSize) * 0.65);
+                transform: rotate(45deg);
+            }
+        }
+
+        .arrow-right {
+            &:before {
+                height: var(--arrowHeadSize);
+                width: var(--arrowHeadSize);
+                right: 50%;
+                top: calc(var(--arrowHeadSize) * 0.65);
+                transform: rotate(-45deg);
+            }
+        }
+
+        .arrow-up {
+            transform: translateY(var(--arrowHeadSize)/3);
+
+            &:before {
+                height: var(--arrowHeadSize);
+                width: var(--arrowHeadSize);
+                left: 0;
+                top: 0.6em;
+                transform: rotate(45deg);
+            }
+        }
+
+        .arrow-down {
+            transform: translateY(calc(-1 * var(--arrowHeadSize) / 2));
+
+            &:before {
+                height: var(--arrowHeadSize);
+                width: var(--arrowHeadSize);
+                right: 0;
+                top: 0.2em;
+                transform: rotate(45deg);
+                // transform: translateY(-50%) rotate(45deg);
+            }
+        }
+    }
+}

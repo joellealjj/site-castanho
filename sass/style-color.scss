@@ -1,0 +1,115 @@
+
+/*-------------------
+Sample CSS overwriting main.css rules and changing title font, and
+section design
+
+[Table of contents]
+    1 Page cover background scroll animation
+[Colors]
+    White transluscent : rgba(white, 0.0625)
+    Black : #0d0d0d
+[Typography]
+    Title : "Jost*" , "Montserrat", "Open Sans" ,sans-serif;
+*/
+
+/* 1 Typography */
+/* Section background color */
+
+
+/* 1 Page cover background scroll animation */
+.page-cover{
+    .bg-color{
+        background-color: #132b7a;
+        transition: 0.6s;
+    }
+    .bg-gradient{
+        background-image: linear-gradient(to right, #f44, #4ff);
+        opacity: 0.25;
+    }
+    // .bg-image-home{
+    //     background-image: url('../img/bg-vector-1.svg');
+    //     background-position: center;
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     transition: 0.6s;
+    // }
+    // &.scrolled{
+    //     .bg-image-home{
+    //         opacity: 0;
+    //         // background-image: url('../img/bg-default-1.jpg');
+    //         // transform: translateY(-200px);
+    //     }
+    // }
+    &[data-color="color-0"] {
+        .bg-color{
+            background-color: #ff44ab;
+        }
+    }
+    &[data-color="color-1"] {
+        .bg-color{
+            background-color: #c444ff;
+        }
+    }
+    &[data-color="color-2"] {
+        .bg-color{
+            background-color: #5744ff;
+        }
+    }
+    &[data-color="color-3"] {
+        .bg-color{
+            background-color: #4460ff;
+        }
+    }
+    &[data-color="color-4"] {
+        .bg-color{
+            background-color: #4495ff;
+        }
+    }
+    &[data-color="color-5"] {
+        .bg-color{
+            background-color: #11e9c5;
+        }
+    }
+    &[data-color="color-6"] {
+        .bg-color{
+            background-color: #35e911;
+        }
+    }
+    &[data-color="color-7"] {
+        .bg-color{
+            background-color: #b3c003;
+        }
+    }
+    &[data-color="color-8"] {
+        .bg-color{
+            background-color: #e26f04;
+        }
+    }
+    &[data-color="color-9"] {
+        .bg-color{
+            background-color: #ff4444;
+        }
+    }
+}
+
+/* 2. Sections */
+.section-home{
+    .section-cover{
+        .bg-cover-img{
+            background-image: url('../img/bg-vector-1.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 0.6s;
+            // transition-delay: 0.6s;
+            opacity: 0;
+            transform: translateY(-25%);
+        }
+    }
+    &.active{
+        .bg-cover-img{
+            opacity: 1;
+            transform: none;
+        }
+    }
+}

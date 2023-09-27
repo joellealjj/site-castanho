@@ -1,0 +1,64 @@
+.slider-b{
+    position: relative;
+    $navMargin: 3rem;
+    color: $white;
+    .slider-arrow{
+        // background: #f4f;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 16px;
+        left: 16px;
+        @media screen and (min-width:$medium-up) {
+            left: 32px;
+            bottom: 32px;
+        }
+        @media screen and (min-width:$large-up) {
+            bottom: $marginX;
+            left: $marginX;
+        }
+        .slider-prev,.slider-next{
+            position: relative;
+            z-index: 1;
+            transition: 0.3s;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-button-disabled{
+            visibility: hidden;
+            opacity: 0;
+        }
+        .slider-btn-top{
+            margin-bottom: 32px;
+        }
+    }
+    .slider-pagination{
+        position: absolute;
+        bottom: 16px+34px;
+        left: 16px;
+        top: auto;
+        z-index: 1;
+        width: auto;
+        @media screen and (min-width:$medium-up) {
+            left: 32px;
+            bottom: 32px+34px;
+        }
+        @media screen and (min-width:$large-up) {
+            bottom: $marginY+34px;
+            left: $marginX;
+        }
+        .swiper-pagination-bullet{
+            background: currentColor;
+            transition: 0.3s;
+            width: 32px;
+            height: 1px;
+            border-radius: 0;
+            margin: 0;
+        }
+        .swiper-pagination-bullet-active{
+            background: currentColor;
+        }
+    }
+}
+
+@import "slide-b";
