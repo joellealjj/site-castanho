@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is FTP deployment with GitHub Actions 🚀
 on: push
 jobs:
   deploy:
-    name: Deploy
+    name: Deploy-FTP
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
