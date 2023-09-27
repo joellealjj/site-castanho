@@ -1,0 +1,17 @@
+
+.section-title {
+    .title-anim{
+        transform: scale(1.2);
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+    }
+}
+.section.active{
+    .section-title {
+        .title-anim{
+            opacity: 1;
+            transition-delay: 0.3s;
+            transform: none;
+        }
+    }
+}

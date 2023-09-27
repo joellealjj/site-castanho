@@ -1,0 +1,56 @@
+.item-grid-a {
+    .item-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(white, 0.2);
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+
+        .icon {
+            font-size: 2.5rem;
+            font-family: $serif;
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-family: $serif;
+            margin-bottom: 0;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                margin-bottom: -1px;
+                bottom: -1rem;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid currentColor;
+            }
+        }
+    }
+
+    .item-img {
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+
+        &.rounded-border {
+            border-radius: 16px;
+        }
+
+        &.straight-border {
+            clip-path: polygon(0% 0%, calc(100% - 2rem) 0%, 100% 2rem, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
+        }
+
+        img {
+            width: 100%;
+            transition: 0.6s;
+        }
+    }
+
+    .item-icon {
+        font-size: 4rem;
+        line-height: 1;
+    }
+}

@@ -1,0 +1,51 @@
+.section{
+    min-width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media screen and (min-width:$medium-up){
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    @media screen and (min-width:$large-up){
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    &.content-white{
+        color: $white;
+    }
+}
+.section-margin{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    @media screen and (min-width:$medium-up){
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+    @media screen and (min-width:$large-up){
+        padding-top: $sectionMarginLg;
+        padding-bottom: $sectionMarginLg;
+    }
+}
+.section-slide{
+    padding-left: 0;
+    padding-right: 0;
+    &.fullsize-slide{
+        padding: 0;
+        overflow: hidden;
+    }
+    .slide-size{
+        width: 100vw;
+        height: 100vh;
+    }
+}
+.viewport-height{
+    height: 100vh !important;
+}
+.auto-height{
+    height: auto !important;
+}

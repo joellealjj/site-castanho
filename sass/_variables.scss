@@ -1,0 +1,117 @@
+@use "sass:color";
+
+// Colors
+$primary:  #0094D8;
+$secondary:  #3f4b62;
+
+$blue: #0896e6;
+$red: #D1335B;
+$white : #ffffff;
+$gray: #8b8b8b;
+$black : #1d1d1d;
+
+// theme colors
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  
+  white: $white,
+  black: $black,
+
+  gray: $gray,
+
+  blue: $blue,
+  // red: $red,
+);
+
+// gradients
+$gradient-primary: linear-gradient(#{"to bottom"}, $primary, mix($primary, $secondary, 25%) );
+$gradient-primary-x: linear-gradient(#{"to right"}, $primary,  mix($primary, $secondary, 25%) );
+
+$gradient-secondary: linear-gradient(#{"to bottom"}, $secondary, mix($secondary, $primary, 25%));
+$gradient-secondary-x: linear-gradient(#{"to right"}, $secondary,  mix($secondary, $primary, 25%));
+
+$gradient-blue: linear-gradient(#{"to bottom"}, #3372e6, #3372e6);
+$gradient-blue-x: linear-gradient(#{"to right"}, #239cff, rgb(22, 69, 145));
+
+$gradient-red: linear-gradient(#{"to bottom"}, #ffa95f, $red);
+$gradient-red-x: linear-gradient(#{"to right"}, #ffa95f, $red);
+
+// gradients colors theme
+$bg-gradient-colors: (
+  primary: $gradient-primary,
+  secondary: $gradient-secondary,
+  blue: $gradient-blue,
+  red: $gradient-red,
+);
+$bg-gradient-x-colors: (
+  primary: $gradient-primary-x,
+  secondary: $gradient-secondary-x,
+  blue: $gradient-blue-x,
+  red: $gradient-red-x,
+);
+
+// Fonts and Typography
+// sans
+$sans-serif : 
+  // Customized webfont
+  "Source Sans Pro", "Proxima Nova", "Noto Sans", "Segoe UI", "Opensans", "Roboto", "Helvetica", 
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
+  system-ui,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  sans-serif;
+$sans : $sans-serif;
+// serif
+$serif : "PT Serif", "Times New Roman" , serif;
+$serif-article : "Times New Roman" , serif;
+
+// condensed
+$condensed : "Roboto Condensed", "Bebas Neue","Ostrich Sans", "Oswald",  sans-serif;
+
+// geometric
+$geo : "Jost*" , "Montserrat", "Open Sans" ,sans-serif;
+$code: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Size 
+$text-size : 1.2rem;
+$text-small : 0.875rem;
+$text-medium : 1.2rem;
+$text-large : 1.4rem;
+$text-xlarge : 2rem;
+$text-xxlarge : 3rem;
+$text-xxxlarge : 4rem;
+$text-xxxxlarge : 6rem;
+
+// device breakpoint size
+$small-up: 576px;
+$medium-up: 768px;
+$large-up: 992px; // 62rem = 992px old : 1024
+$xlarge-up: 1200px;
+$xxlarge-up: 1600px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $small-up,
+  md: $medium-up,
+  lg: $large-up,
+  xl: $xlarge-up
+) !default;
+
+// Item width and height
+$toolbarHeight: 64px;
+$logoHeightLg: 48px;
+$barWidth: 40px;
+
+// content width
+$contentWidthSmall: 40rem;
+// $contentWidthMedium: 50rem;
+$contentWidthMedium: 55rem;
+$contentWidthLarge: 64rem;
+
+// Page margin
+$marginX : 32px;
+$marginY : 32px;
+$sectionMarginLg: 8rem;

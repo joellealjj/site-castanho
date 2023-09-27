@@ -1,0 +1,70 @@
+
+
+
+// arrow icon of button
+$arrowBorder: 1.5px;
+$arrowHeight: 0.5em;
+$iconSize: 2em;
+$arrowHeadSize: 0.75em;
+.icon-arrow-b {
+    .arrow-left, .arrow-right, .arrow-up, .arrow-down{
+        position: relative;
+        height: $iconSize;
+        width: $iconSize;
+        display: inline-block;
+        border-radius: 0;
+        box-sizing: border-box;
+        transition: 0.3s;
+        &:before{
+            position: absolute;
+            content: "";
+            height: $arrowHeight;
+            width: $arrowHeight;
+            left: 50%;
+            top: 50%;
+            transition: 0.3s;
+            border: $arrowBorder solid currentColor;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid currentColor;
+            border-radius: $iconSize;
+            transition: 0.3s;
+            opacity: 0.1;
+        }
+    }
+    .arrow-left{
+        &:before{
+            transform: translateY(-50%) translateX(-30%) rotate(45deg);
+            border-top: none;
+            border-right: none;
+        }
+    }
+    .arrow-right{
+        &:before{
+            transform: translateY(-50%) translateX(-70%) rotate(-45deg);
+            border-top: none;
+            border-left: none;
+        }
+    }
+}
+
+.btn:hover{
+    .icon-arrow-b.icon-anim{
+        .arrow-left, .arrow-right{
+            &::before{
+                opacity: 0.5;
+            }
+            &::after{
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+    }
+}

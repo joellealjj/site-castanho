@@ -1,0 +1,63 @@
+// max width
+.width-small {
+    max-width: $contentWidthSmall;
+    width: 100%;
+}
+
+.width-medium {
+    max-width: 50rem;
+    width: 100%;
+    @media screen and (min-width:$xlarge-up){
+        max-width: $contentWidthMedium;
+    }
+}
+
+.width-large {
+    max-width: $contentWidthLarge;
+    width: 100%;
+    @media screen and (min-width:$large-up){
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    @media screen and (min-width:$xlarge-up){
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.min-h-viewport{
+    min-height: 100vh;
+}
+.min-w-viewport{
+    min-width: 100vh;
+}
+.min-w-full{
+    min-width: 100%;
+}
+.min-h-full{
+    min-height: 100%;
+}
+
+.w-full{
+    width: 100%;
+}
+.h-full{
+    height: 100%;
+}
+
+// margins
+.mb-6{
+    margin-bottom: 5rem !important;
+}
+@media screen and (min-width:$medium-up){
+    .mb-md-6{
+        margin-bottom: 5rem !important;
+    }
+}
+@media screen and (min-width:$large-up){
+    .mb-lg-6{
+        margin-bottom: 5rem !important;
+    }
+}
+
+// row gutters

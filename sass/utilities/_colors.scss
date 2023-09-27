@@ -1,0 +1,84 @@
+
+// Background : color, gradient, image
+// @debug ("BACKGROUND UTILITIES");
+// solid color
+@each $color,
+$value in $theme-colors {
+    .bg-#{""+$color} {
+        background-color: $value !important;
+    }
+}
+// lighter bg color
+@each $color,
+$value in $theme-colors {
+    .bg-#{""+$color}-light {
+        // background-color: mix($value, #fff, 0.2) !important;
+        background-color: lighten($value, 40%) !important;
+    }
+}
+// darker bg color
+@each $color,
+$value in $theme-colors {
+    .bg-#{""+$color}-dark {
+        // background-color: mix($value, #fff, 0.2) !important;
+        background-color: darken($value, 35%) !important;
+    }
+}
+// color variation brighter to darker (5 is the normal value)
+@for $i from 0 through 10 {
+    @each $color,
+    $value in $theme-colors {
+        .bg-#{""+$color}-#{$i} {
+            background-color: adjust-color($value, $lightness: -($i*10%-50%)*0.8 ) !important;
+        }
+    }
+}
+
+// gradient
+
+// gradient background
+.bg-gradient-primary {
+    background-image: $gradient-primary;
+}
+.bg-gradient-x-primary {
+    background-image: $gradient-primary-x;
+}
+
+.bg-gradient-secondary {
+    background-image: $gradient-secondary;
+}
+.bg-gradient-x-secondary {
+    background-image: $gradient-secondary-x;
+}
+
+.bg-gradient-blue {
+    background-image: $gradient-blue;
+}
+
+.bg-gradient-x-blue {
+    background-image: $gradient-blue-x;
+}
+
+.bg-gradient-red {
+    background-image: $gradient-red;
+}
+.bg-gradient-x-red {
+    background-image: $gradient-red-x;
+}
+
+
+.mask-gradient-black{
+    background: linear-gradient(#{"to bottom"}, rgba(black,0.0) , rgba(black,0.75) );
+}
+.mask-gradient-black-inv{
+    background: linear-gradient(#{"to top"}, rgba(black,0.0) , rgba(black,0.75) );
+}
+
+.mask{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

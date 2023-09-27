@@ -1,0 +1,120 @@
+.strong{
+    font-weight: bold;
+}
+.fw-bold{
+    font-weight: bold !important;
+}
+.fw-normal{
+    font-weight: normal !important;
+}
+.fw-light{
+    font-weight: lighter !important;
+}
+
+.t-upper{
+    text-transform: uppercase;
+}
+.t-lower{
+    text-transform: lowercase;
+}
+.t-spaced{
+    letter-spacing: 0.1em;
+}
+
+.fs-normal{
+    font-size: 1.2rem;
+}
+
+.text-invisible{
+    display: none;
+}
+
+.fs-1{
+    font-size: 1rem !important;
+}
+.fs-1-2{
+    font-size: 1.2rem !important;
+}
+
+.font-title{
+    font-family: $serif;
+}
+
+// Text color per theme
+@each $color,
+$value in $theme-colors {
+    .text-#{""+$color} {
+        color: $value !important;
+    }
+}
+// Text color variations (0 to 10)
+// color variation brighter to darker (5 is the normal value)
+@for $i from 0 through 10 {
+
+    @each $color,
+    $value in $theme-colors {
+        .text-#{""+$color}-#{$i} {
+            color: adjust-color($value, $lightness: -($i*10%-50%)*0.8) !important;
+        }
+    }
+}
+
+
+@media screen and (min-width: $medium-up) {
+    @each $color,
+    $value in $theme-colors {
+        .text-md-#{""+$color} {
+            color: $value !important;
+        }
+    }
+}
+
+@media screen and (min-width: $large-up) {
+    @each $color,
+    $value in $theme-colors {
+        .text-lg-#{""+$color} {
+            color: $value !important;
+        }
+    }
+}
+
+// text stroke
+/* text stroke */
+.text-stroke {
+    -webkit-text-stroke: 1px $white;
+    color: transparent;
+}
+
+@each $color,
+$value in $theme-colors {
+    .text-stroke-#{""+$color} {
+        -webkit-text-stroke: 1px $value;
+        color: transparent;
+    }
+}
+
+// text orientation
+.text-vertical{
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+}
+
+.text-quote {
+    position: relative;
+
+    &::before {
+        content: "“";
+        top: -0.05em;
+        left: 0em;
+        position: absolute;
+        font-size: 8rem;
+        line-height: 1;
+        font-weight: bold;
+        opacity: 0.2;
+        @media screen and (min-width:$large-up) {
+            left: -0.65em;
+            font-size: 6rem;
+            opacity: 0.25;
+        }
+    }
+}

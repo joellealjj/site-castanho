@@ -1,0 +1,105 @@
+.item-grid-c {
+    color: $white;
+    a {
+        color: $white;
+    }
+
+    .item-img {
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+
+        &.rounded-border {
+            border-radius: 16px;
+        }
+
+        &.straight-border {
+            clip-path: polygon(0% 0%, calc(100% - 2rem) 0%, 100% 2rem, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
+        }
+
+        img {
+            width: 100%;
+            transition: 0.6s;
+        }
+
+        .img-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: auto;
+            // padding: 2rem 1rem;
+            padding: 1.5rem;
+        }
+
+        .img-footer {
+            position: absolute;
+            top: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1.5rem;
+            // padding: 1rem;
+        }
+
+        .i-title,
+        h3 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+            // font-weight: bold;
+            // font-family: $geo;
+            // font-family: $serif;
+        }
+
+        .i-price,
+        h4 {
+            font-size: 1.75rem;
+            // margin-bottom: 1rem;
+            font-weight: normal;
+            // font-family: $geo;
+            // font-family: $serif;
+        }
+
+        .i-text,
+        p {
+            max-width: 80%;
+        }
+    }
+
+    &:hover {
+        .hover-shadow .item-img{
+            
+            box-shadow: 0px 0px 16px rgba(gray, 0.2);
+        }
+
+        .item-img {
+            &.straight-border {
+                transform: none;
+                clip-path: polygon(2rem 0%, 100% 0%, 100% calc(100% - 2rem), calc(100% - 2rem) 100%, 0% 100%, 0% 2rem);
+            }
+
+            img {
+                transform: scale(1.20);
+                transition: 5s;
+                transition-timing-function: linear;
+            }
+        }
+
+        .item-title {
+            &::after {
+                height: 100%;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.grid-list-c {
+    $gridMargin: 2rem;
+    margin-bottom: -$gridMargin;
+
+    .item-grid-c {
+        margin-bottom: $gridMargin;
+    }
+}

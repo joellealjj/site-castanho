@@ -1,0 +1,37 @@
+.pos-abs{
+    position: absolute;
+}
+
+
+// alignments
+// x center
+.align-x-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+// y center
+.align-y-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+// opacity
+@for $i from 0 through 10 {
+    .opacity-#{$i} {
+        opacity: ($i*0.1) !important;
+    }
+}
+
+.straight-border{
+    clip-path: polygon(0% 0%, calc(100% - 2rem) 0%, 100% 2rem, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
+}
+
+.gone{
+    display: none !important;
+    transition: 0.3s;
+}

@@ -1,0 +1,39 @@
+.form-control-outline{
+    background: transparent;
+    display: block;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1.2;
+    border: 1px solid rgba(white, 0.2);
+    background: rgba(white, 0.1);
+    border-radius: 0;
+    color: currentColor;
+}
+textarea{
+    min-height: 6rem;
+}
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    font-size: 1.125rem;
+    padding: .5rem .75rem;
+    // max-width: 320px;
+    min-height: 48px;
+    color: currentColor;
+    border: none;
+    border: 1px solid rgba(white, 0.2);
+    background: rgba(white, 0.1);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.form-group{
+    position: relative;
+    label.error{
+        position: absolute;
+        font-size: 1rem;
+        right: 0.5rem;
+        bottom: 0rem;
+    }
+}

@@ -1,0 +1,35 @@
+.section-page {
+    .section-header,
+    .section-content {
+        p {
+            // font-family: $serif;
+            font-family: $sans;
+            line-height: 1.6;
+            font-size: $text-medium;
+            // font-size: 1rem;
+            max-width: 48rem;
+            @media screen and (min-width:$xxlarge-up) {
+                font-size: $text-large;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    
+}
+
+.quote {
+    &::before {
+        content: open-quote;
+    }
+
+    &::after {
+        content: close-quote;
+    }
+}
